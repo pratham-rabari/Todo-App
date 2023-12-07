@@ -38,8 +38,11 @@ setPassword("")
       onChange={(e)=>{setUsername(e.target.value)}} value={username}/>
       <input className="pass" type="password" style={{textAlign:"center"}} placeholder="Password" name="password"
       onChange={(e)=>{setPassword(e.target.value)}} value={password}/>
-      <input className="submit"  type="submit" style={{textAlign:"center"}} onClick={post} value="Log In"/>
-      <Link to='/Sign' className='text-center' style={{textAlign:"center"}}>New user please Signin</Link>
+      <input className="submit my-2"  type="submit" style={{textAlign:"center"}} onClick={post} value="Log In"/><br/>
+<div className='text-center'>
+<Link to='/Sign'  style={{textAlign:"center"}}>New user please ? <strong>Sign in</strong></Link>
+</div>
+
       </form>      
     </div>
     </div>
