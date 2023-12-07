@@ -1,2 +1,2 @@
 # Todo-App
- Full Stack Todo Website with Authentication
+ MERN Stack Todo Website with Authentication
