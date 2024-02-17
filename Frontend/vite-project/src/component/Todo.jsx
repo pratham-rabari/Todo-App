@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import axios from "axios"
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 export default function Todo() {
@@ -9,12 +9,12 @@ export default function Todo() {
   const [desc, setDesc] = useState("")
   const [cards, setCards] = useState([])
   const navigate = useNavigate()
-  const isUserSignedIn =!!localStorage.getItem("token")
+  const isUserSignedIn = !!localStorage.getItem("token")
 
-const dele = ()=>{
-navigate("/Login")
-localStorage.removeItem('token')
-}
+  const dele = () => {
+    navigate("/Login")
+    localStorage.removeItem('token')
+  }
 
 
   const action = async (e) => {
@@ -22,7 +22,7 @@ localStorage.removeItem('token')
     if (!title || !desc) {
       return alert("pleas fullfill the detail")
     }
-    if(!isUserSignedIn){
+    if (!isUserSignedIn) {
       return alert("Please Login First")
     }
     setTitle("")
@@ -57,17 +57,17 @@ localStorage.removeItem('token')
       <nav className="navbar">
         <div className="container-fluid my-2" style={{ position: "relative" }}>
           {
-            isUserSignedIn?(
+            isUserSignedIn ? (
               <>
-              <Link to="/Sign" className="btn btn-info mt-3"  style={{ position: "absolute", right: "0px" }} onClick={dele}>Log Out</Link>
+                <Link to="/Sign" className="btn btn-info mt-3" style={{ position: "absolute", right: "0px" }} onClick={dele}>Log Out</Link>
               </>
-            ):(
+            ) : (
               <>
-              <Link to="/Sign" className="btn btn-info mt-3"  style={{ position: "absolute", right: "0px" }}>Log in</Link>
+                <Link to="/Sign" className="btn btn-info mt-3" style={{ position: "absolute", right: "0px" }}>Log in</Link>
               </>
             )
           }
-          
+
         </div>
       </nav>
       <div className="container d-flex flex-column justify-content-center">
